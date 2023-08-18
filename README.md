@@ -1,6 +1,6 @@
 # chart
 
-A new Flutter project.
+A demo Flutter project for creating Bar chart and Pie charts with syncfusion flutter charts.
 
 ## Getting Started
 
