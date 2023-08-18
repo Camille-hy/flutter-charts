@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-
 class BarChart extends StatefulWidget {
   const BarChart({super.key});
 
@@ -38,18 +37,18 @@ class _BarChartState extends State<BarChart> {
           height: 550,
           width: 350,
           child: SfCartesianChart(
-              title: ChartTitle(text: 'Food Sales'),
-              tooltipBehavior: _tooltipBehavior,
-              primaryXAxis: CategoryAxis(
-                majorGridLines: const MajorGridLines(width: 0),
-                title: AxisTitle(text: 'Food Name'),
-                labelIntersectAction: AxisLabelIntersectAction.rotate45,
-              ),
-              primaryYAxis: NumericAxis(
-                majorGridLines: const MajorGridLines(width: 0),
-                title: AxisTitle(text:'Sales Amount'),
-              ),
-              series: _getBarSeries()),
+            title: ChartTitle(text: 'Food Sales'),
+            tooltipBehavior: _tooltipBehavior,
+            primaryXAxis: CategoryAxis(
+              majorGridLines: const MajorGridLines(width: 0),
+              title: AxisTitle(text: 'Food Name'),
+              labelIntersectAction: AxisLabelIntersectAction.rotate45,
+            ),
+            primaryYAxis: NumericAxis(
+              majorGridLines: const MajorGridLines(width: 0),
+              title: AxisTitle(text:'Sales Amount'),
+            ),
+            series: _getBarSeries()),
         ),
     );
   }
