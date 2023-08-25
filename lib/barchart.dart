@@ -61,8 +61,11 @@ class _BarChartState extends State<BarChart> {
                       majorGridLines: const MajorGridLines(width: 0),
                     ),
                     primaryYAxis: NumericAxis(
-                      edgeLabelPlacement: EdgeLabelPlacement.shift,
-                      title: AxisTitle(text: 'Sales Amount'),
+                      majorGridLines: const MajorGridLines(width: 0),
+                      title: AxisTitle(text:'Food Amount'),
+                      minimum: 0,
+                      maximum: 60,
+                      majorTickLines: const MajorTickLines(size: 0),
                     ),
                     series: _getBarSeries2()),
                 ElevatedButton(
@@ -118,23 +121,23 @@ class _BarChartState extends State<BarChart> {
     };
     return <BarSeries<FoodData, String>>[
       BarSeries<FoodData, String>(
-          name: 'Food',
-          dataSource: _chartData,
-          width: 0.6,
-          xValueMapper: (FoodData data, _) => data.food,
-          yValueMapper: (FoodData data, _) => data.amount,
-          pointColorMapper: (FoodData data, _) => colorMap[data.food],
-          dataLabelSettings: DataLabelSettings(
-            isVisible: true,
-          ),
-          onPointTap: (args) {
-            setState(() {
-              selectedPointIndex = args.pointIndex!;
-              print(selectedPointIndex);
-            });
-            final FoodData tappedData = _chartData[selectedPointIndex];
-            _showDataPopup(context, tappedData);
-          })
+        name: 'Food',
+        dataSource: _chartData,
+        width: 0.6,
+        xValueMapper: (FoodData data, _) => data.food,
+        yValueMapper: (FoodData data, _) => data.amount,
+        pointColorMapper: (FoodData data, _) => colorMap[data.food],
+        borderRadius: BorderRadius.circular(15),
+        trackColor: const Color.fromRGBO(220, 220, 220, 1),
+        isTrackVisible: true,
+        onPointTap: (args) {
+          setState(() {
+            selectedPointIndex = args.pointIndex!;
+            print(selectedPointIndex);
+          });
+          final FoodData tappedData = _chartData[selectedPointIndex];
+          _showDataPopup(context, tappedData);
+        })
     ];
   }
 
