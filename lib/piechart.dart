@@ -72,6 +72,7 @@ class _PieChartState extends State<PieChart> {
         explode: true,
         explodeIndex: 0,
         explodeOffset: '10%',
+        
       )
     ];
   }
