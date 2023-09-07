@@ -69,6 +69,7 @@ class _PieChartState extends State<PieChart> {
         yValueMapper: (FoodData data, _) => data.amount,
         dataLabelSettings: DataLabelSettings(isVisible: true),
         enableTooltip: true,
+        pointRenderMode: PointRenderMode.gradient,
         explode: true,
         explodeIndex: 0,
         explodeOffset: '10%',

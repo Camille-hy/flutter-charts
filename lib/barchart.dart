@@ -111,14 +111,14 @@ class _BarChartState extends State<BarChart> {
   }
 
   List<ChartSeries<FoodData, String>> _getBarSeries2() {
-    final Map<String, Color> colorMap = {
-      'Burger': Color.fromARGB(53, 92, 125, 1),
-      'Fries': Color.fromARGB(192, 108, 132, 1),
-      'Apple Pie': Color.fromARGB(246, 114, 128, 1),
-      'Nugget': Color.fromARGB(248, 177, 149, 1),
-      'Fried Chicken': Color.fromARGB(116, 180, 155, 1),
-      'Whipped Potato': Color.fromARGB(255, 226, 173, 1),
-    };
+    // final Map<String, Color> colorMap = {
+    //   'Burger': Color.fromARGB(53, 92, 125, 1),
+    //   'Fries': Color.fromARGB(192, 108, 132, 1),
+    //   'Apple Pie': Color.fromARGB(246, 114, 128, 1),
+    //   'Nugget': Color.fromARGB(248, 177, 149, 1),
+    //   'Fried Chicken': Color.fromARGB(116, 180, 155, 1),
+    //   'Whipped Potato': Color.fromARGB(255, 226, 173, 1),
+    // };
     return <BarSeries<FoodData, String>>[
       BarSeries<FoodData, String>(
         name: 'Food',
@@ -126,7 +126,15 @@ class _BarChartState extends State<BarChart> {
         width: 0.6,
         xValueMapper: (FoodData data, _) => data.food,
         yValueMapper: (FoodData data, _) => data.amount,
-        pointColorMapper: (FoodData data, _) => colorMap[data.food],
+        // pointColorMapper: (FoodData data, _) => colorMap[data.food],
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromRGBO(53, 92, 125, 1),
+            Color.fromRGBO(192, 108, 132, 1),
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
         borderRadius: BorderRadius.circular(15),
         trackColor: const Color.fromRGBO(220, 220, 220, 1),
         isTrackVisible: true,
