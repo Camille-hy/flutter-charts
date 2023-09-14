@@ -44,16 +44,6 @@ class _PieChartState extends State<PieChart> {
                   tooltipBehavior: _tooltipBehavior,
                   series: _getPieSeries()),
             ),
-            Container(
-              width: 400,
-              child: SfCircularChart(
-                  title: ChartTitle(text: 'Food Sales'),
-                  legend: Legend(
-                      isVisible: true,
-                      overflowMode: LegendItemOverflowMode.wrap),
-                  tooltipBehavior: _tooltipBehavior,
-                  series: _getRingPieSeries()),
-            ),
           ],
         ),
       ),
@@ -69,24 +59,11 @@ class _PieChartState extends State<PieChart> {
         yValueMapper: (FoodData data, _) => data.amount,
         dataLabelSettings: DataLabelSettings(isVisible: true),
         enableTooltip: true,
-        pointRenderMode: PointRenderMode.gradient,
+        // pointRenderMode: PointRenderMode.gradient,
         explode: true,
         explodeIndex: 0,
         explodeOffset: '10%',
         
-      )
-    ];
-  }
-
-  List<CircularSeries<FoodData, String>> _getRingPieSeries() {
-    return <CircularSeries<FoodData, String>>[
-      DoughnutSeries<FoodData, String>(
-        dataSource: _chartData,
-        dataLabelMapper: (FoodData data, _) => data.text,
-        xValueMapper: (FoodData data, _) => data.food,
-        yValueMapper: (FoodData data, _) => data.amount,
-        dataLabelSettings: DataLabelSettings(isVisible: true),
-        enableTooltip: true,
       )
     ];
   }
