@@ -45,21 +45,22 @@ class _BarChartState extends State<BarChart> {
 
   void _showDataPopup(BuildContext context, SalesData data) {
     showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text(data.x),
-            content: Text('Value: ${data.y}'),
-            actions: <Widget>[
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('OK'),
-              )
-            ],
-          );
-        });
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(data.x),
+          content: Text('Value: ${data.y}'),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            )
+          ],
+        );
+      }
+    );
   }
 }
 

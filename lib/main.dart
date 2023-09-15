@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:chart/piechart.dart';
 import 'package:chart/barchart.dart';
+import 'package:chart/progress.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void navigateToProgress() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProgressIndicatorExample(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,6 +87,18 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: Text(
                 'BarChart',
+                style: TextStyle(
+                  fontSize: 25.0,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToProgress(),
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(Size(100, 100)),
+              ),
+              child: Text(
+                'Progress',
                 style: TextStyle(
                   fontSize: 25.0,
                 ),
