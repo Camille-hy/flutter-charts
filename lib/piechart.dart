@@ -26,7 +26,7 @@ class _PieChartState extends State<PieChart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pie Chart'),
+        title: const Text('Pie Chart'),
         backgroundColor: Colors.blue[200],
         centerTitle: true,
       ),
@@ -37,12 +37,12 @@ class _PieChartState extends State<PieChart> {
             Container(
               width: 400,
               child: SfCircularChart(
-                  title: ChartTitle(text: 'Food Sales'),
-                  legend: Legend(
-                      isVisible: true,
-                      overflowMode: LegendItemOverflowMode.wrap),
-                  tooltipBehavior: _tooltipBehavior,
-                  series: _getPieSeries()),
+                title: ChartTitle(text: 'Food Sales'),
+                legend: const Legend(
+                    isVisible: true,
+                    overflowMode: LegendItemOverflowMode.wrap),
+                tooltipBehavior: _tooltipBehavior,
+                series: _getPieSeries()),
             ),
           ],
         ),

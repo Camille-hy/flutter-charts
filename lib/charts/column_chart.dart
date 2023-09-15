@@ -18,27 +18,27 @@ class _ColumnChartState extends State<ColumnChart> {
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
-        title: ChartTitle(text: 'Sales'),
-        tooltipBehavior: TooltipBehavior(enable: true),
-        primaryXAxis: CategoryAxis(
-          majorGridLines: const MajorGridLines(width: 0),
-          title: AxisTitle(text: 'Food Name'),
-          labelIntersectAction: AxisLabelIntersectAction.rotate45,
-        ),
-        primaryYAxis: NumericAxis(
-          majorGridLines: const MajorGridLines(width: 0),
-          title: AxisTitle(text: 'Sales Amount'),
-        ),
-        series: _getBarSeries());
+      title: ChartTitle(text: 'Sales'),
+      tooltipBehavior: TooltipBehavior(enable: true),
+      primaryXAxis: CategoryAxis(
+        majorGridLines: const MajorGridLines(width: 0),
+        title: AxisTitle(text: 'Food Name'),
+        labelIntersectAction: AxisLabelIntersectAction.rotate45,
+      ),
+      primaryYAxis: NumericAxis(
+        majorGridLines: const MajorGridLines(width: 0),
+        title: AxisTitle(text: 'Sales Amount'),
+      ),
+      series: _getBarSeries());
   }
 
   List<ChartSeries<SalesData, String>> _getBarSeries() {
     final Map<String, Color> colorMap = {
-      'AL': Color.fromARGB(53, 92, 125, 1),
-      'MC': Color.fromARGB(192, 108, 132, 1),
-      'UL': Color.fromARGB(246, 114, 128, 1),
-      'SL': Color.fromARGB(248, 177, 149, 1),
-      'ML': Color.fromARGB(116, 180, 155, 1),
+      'AL': const Color.fromARGB(53, 92, 125, 1),
+      'MC': const Color.fromARGB(192, 108, 132, 1),
+      'UL': const Color.fromARGB(246, 114, 128, 1),
+      'SL': const Color.fromARGB(248, 177, 149, 1),
+      'ML': const Color.fromARGB(116, 180, 155, 1),
     };
     final List<SalesData> salesData = getSalesData();
     return <ColumnSeries<SalesData, String>>[

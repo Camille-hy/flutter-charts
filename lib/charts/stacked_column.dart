@@ -9,7 +9,7 @@ class StackedColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      legend: Legend(overflowMode: LegendItemOverflowMode.wrap),
+      legend: const Legend(overflowMode: LegendItemOverflowMode.wrap),
       primaryXAxis: CategoryAxis(
         majorGridLines: MajorGridLines(width: 0),
         majorTickLines: MajorTickLines(width: 0),
