@@ -8,7 +8,7 @@ class SalesData {
 
 List<SalesData> getSalesData() {
   final List<SalesData> chartData = [
-    SalesData('AL', 60, 10),
+    SalesData('AL', 45, 10),
     SalesData('MC', 10, 5),
     SalesData('UL', 40, 25),
     SalesData('SL', 30, 30),

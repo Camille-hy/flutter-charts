@@ -26,7 +26,6 @@ class _ColumnChartState extends State<ColumnChart> {
 
   @override
   Widget build(BuildContext context) {
-
     final List<SalesData> salesData = getSalesData();
     getMax(salesData);
 
@@ -44,7 +43,7 @@ class _ColumnChartState extends State<ColumnChart> {
         ),
         series: _getBarSeries());
   }
-  
+
   void getMax(List<SalesData> data) {
     for (int i = 0; i < data.length; i++) {
       if (data[i].y > yMaximum) {
@@ -69,7 +68,9 @@ class _ColumnChartState extends State<ColumnChart> {
           xValueMapper: (SalesData data, _) => data.x,
           yValueMapper: (SalesData data, _) => data.y,
           // pointColorMapper: (SalesData data, _) => colorMap[data.x],
-          pointColorMapper: (SalesData data, _) => data.y == yMaximum ? Color.fromARGB(255, 29, 235, 90) : Color.fromARGB(255, 238, 9, 58),
+          pointColorMapper: (SalesData data, _) => data.y == yMaximum
+              ? Color.fromARGB(255, 29, 235, 90)
+              : Color.fromARGB(255, 238, 9, 58),
           onPointTap: (args) {
             setState(() {
               selectedPointIndex = args.pointIndex!;
